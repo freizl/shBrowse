@@ -24,7 +24,14 @@
             // Public API here
             return {
                 events: function (params) {
-                    var data = angular.extend({}, DEFAULT_OPTS, params);
+                    if (!!params && params.p > 1) {
+                        var start = (params.p - 1) * 20;
+                    }
+                    var data = angular.extend({},
+                                              DEFAULT_OPTS,
+                                              params || {},
+                                              {start: start}
+                                             );
                     return $http({method: 'GET', url: EVENTS_URL, params: data});
                 }
             };

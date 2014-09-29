@@ -1,17 +1,32 @@
 <h2>This is the search view.</h2>
 
 <div> {{events11}} </div>
-<ul class="search-event-list" ng-show="hasTickets">
-  <li ng-repeat="event in events">
-    <a ng-href="http://www.stubhub.com/{{event.eventUrl}}">
-      <p>
-        <img src="{{event.imageUrl}}" width="50" height="25" />
+<div ng-show="hasTickets">
+  <ul class="search-event-list">
+    <li ng-repeat="event in events">
+      <a ng-href="http://www.stubhub.com/{{event.eventUrl}}">
+        <p>
+          <!--
+          -->
+          <img ng-src="{{event.imageUrl}}" width="50" height="25" />
 
-        {{event.name}}, {{event.ticketInfo.minPrice | currency}}, {{event.ticketInfo.totalTickets}}, {{event.eventDateLocal | date: 'EEE, MMM dd, yyyy'}}
-      </p>
-    </a>
-  </li>
-</ul>
+
+          {{event.name}}, {{event.ticketInfo.minPrice | currency}}, {{event.ticketInfo.totalTickets}} tickets, {{event.eventDateLocal | date: 'EEE, MMM dd, yyyy'}}
+        </p>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="pagination">
+    <li class="arrow unavailable">&laquo;</li>
+    <li ng-repeat="p in page.pages" ng-class="currentPage(p)">
+      <a ng-href="{{p.url}}" >{{p.num}}</a>
+    </li>
+    <li class="unavailable">&hellip;</li>
+    <li><a ng-href="{{page.totalPage.url}}">{{page.totalPage.num}}</a></li>
+    <li class="arrow">&raquo;</li>
+  </ul>
+</div>
 
 <p ng-hide="hasTickets" class="">
   No tickets found.
