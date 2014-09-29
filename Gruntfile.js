@@ -71,14 +71,26 @@ module.exports = function (grunt) {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
+        debug: true,
         livereload: 35729
       },
+
+      proxies: [{
+          "context": "/shape",
+          "host": "www.stubhub.com",
+          "https": false,
+          "port": 80,
+          "changeOrigin": true
+      }],
+
       livereload: {
         options: {
           open: true,
           middleware: function (connect) {
             var rewrites = modRewrite(['^[^\\.]*$ /index.html [L]']);
+            var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
             return [
+              proxySnippet,
               rewrites,
               connect.static('.tmp'),
               connect().use(
@@ -90,12 +102,15 @@ module.exports = function (grunt) {
           }
         }
       },
+
       test: {
         options: {
           port: 9001,
           middleware: function (connect) {
             var rewrites = modRewrite(['^[^\\.]*$ /index.html [L]']);
+            var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;
             return [
+              proxySnippet,
               rewrites,
               connect.static('.tmp'),
               connect.static('test'),
@@ -367,6 +382,7 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
+      'configureProxies:livereload',
       'connect:livereload',
       'watch'
     ]);

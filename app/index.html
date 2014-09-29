@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
-    <link rel="stylesheet" href="bower_components/foundation/css/normalize.css">
-    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css">
+    <link rel="stylesheet" href="/bower_components/foundation/css/normalize.css">
+    <link rel="stylesheet" href="/bower_components/foundation/css/foundation.css">
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/main.css -->
@@ -51,16 +51,18 @@
     </div>
 
 
-    <!-- build:js(.) scripts/oldieshim.js -->
+    <!-- build:js(.) /scripts/oldieshim.js -->
     <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="/bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
 
-    <!-- build:js(.) scripts/vendor.js -->
+    <!-- build:js(.) /scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
@@ -69,11 +71,13 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/search.js"></script>
+        <!-- build:js({.tmp,app}) /scripts/scripts.js -->
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/controllers/main.js"></script>
+        <script src="/scripts/controllers/about.js"></script>
+        <script src="/scripts/controllers/search.js"></script>
+        <script src="/scripts/services/models/eventmodel.js"></script>
+        <script src="/scripts/services/api/search.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -16,7 +16,7 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
@@ -34,5 +34,8 @@ angular
         redirectTo: '/'
       });
 
-      //$locationProvider.html5Mode(true);
+      $httpProvider.defaults.headers.common.Authorization = 'Bearer wzHoy6uSWWV9qHnK9KF42NP09LQa';
+
+      $locationProvider.html5Mode(true);
+
   });
