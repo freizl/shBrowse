@@ -74,18 +74,21 @@ module.exports = function (grunt) {
         debug: true,
         livereload: 35729
       },
-
-      proxies: [{
-          "context": "/shape",
-          "host": "www.stubhub.com",
-          "https": false,
-          "port": 80,
-          "changeOrigin": true
-      }],
+        proxies: [{
+            "context": "/shape",
+            "host": "www.stubhub.com",
+            "https": false,
+            "port": 80,
+            "changeOrigin": true,
+            "headers": {
+                "host": "www.stubhub.com"
+            }
+        }],
 
       livereload: {
         options: {
           open: true,
+
           middleware: function (connect) {
             var rewrites = modRewrite(['^[^\\.]*$ /index.html [L]']);
             var proxySnippet = require('grunt-connect-proxy/lib/utils').proxyRequest;

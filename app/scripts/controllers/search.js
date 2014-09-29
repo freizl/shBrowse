@@ -10,7 +10,13 @@
 angular.module('ngBrxApp')
   .controller('SearchCtrl', function ($scope, $location, searchApi) {
       var so = $location.search();
+      $scope.events = [];
 
-      $scope.so = JSON.stringify(so);
-      searchApi.events(so);
+      searchApi.events(so)
+          .success(function (data) {
+              if (!!data && data.numFound > 0) {
+                  $scope.events = data.events;
+                  $scope.hasTickets = true;
+              }
+          });
   });
