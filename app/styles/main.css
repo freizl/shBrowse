@@ -1,0 +1,25 @@
+/* Space out content a bit */
+body {
+  padding-bottom: 20px;
+}
+
+.main-view {
+  min-height: 500px;
+}
+
+.logo {
+  background: url('/images/logo.svg') no-repeat left center;
+  background-size: contain;
+  font-size: 26px;
+  padding-left: 70px;
+  color: #f26516;
+}
+
+.logo:hover {
+  color: #f26516;
+}
+
+.footer {
+  border-top: 1px solid #CCC;
+  padding-top: 10px;
+}
