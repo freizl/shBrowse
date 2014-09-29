@@ -6,5 +6,8 @@
   - etc?
 
 3. [ ] Pagination components
+  - pagination via abs link or click handler
+
 4. [ ] angular i18n
+
 5. [ ] ng-translation
