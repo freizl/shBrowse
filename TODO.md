@@ -10,6 +10,6 @@
 
 4. [] angular i18n
   - Static way: add locale angular file into index.html to enable.
-  - Dynamic way: ??
+  - Dynamic way: leverage server side (temp solution at client side)
 
 5. [ ] ng-translation
