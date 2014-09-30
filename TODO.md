@@ -1,11 +1,11 @@
 1. [X] css and javascripts per view, or even per directives
   - Simpl way: do it via view template
 
-2. [ ] How to handle constants like
+2. [X] How to handle constants like, a service
   - token
   - etc?
 
-3. [ ] Pagination components
+3. [X] Pagination components
   - pagination via abs link or click handler
 
 4. [] angular i18n

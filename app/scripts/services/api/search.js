@@ -9,13 +9,14 @@
      * Factory in the ngBrxApp.
      */
     angular.module('ngBrxApp')
-        .factory('searchApi', function ($http) {
+        .factory('searchApi', ['$http', 'constantService', function ($http, constantService) {
 
             var BASE_URL = '/shape/search/catalog/',
-                EVENTS_URL = BASE_URL + 'events/v3';
+                EVENTS_URL = BASE_URL + 'events/v3',
+                SIZE = constantService.pageSize;
 
             var DEFAULT_OPTS = { minAvailableTickets: 1,
-                                 limit: 20,
+                                 limit: SIZE,
                                  //locale: 'en_US',
                                  sort: 'eventDateLocal asc',
                                  status: 'active'
@@ -25,7 +26,7 @@
             return {
                 events: function (params) {
                     if (!!params && params.p > 1) {
-                        var start = (params.p - 1) * 20;
+                        var start = (params.p - 1) * SIZE;
                     }
                     var data = angular.extend({},
                                               DEFAULT_OPTS,
@@ -35,6 +36,6 @@
                     return $http({method: 'GET', url: EVENTS_URL, params: data});
                 }
             };
-        });
+        }]);
 
 })(angular, _);

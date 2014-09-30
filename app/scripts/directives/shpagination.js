@@ -33,7 +33,7 @@
      * # shPagination
      */
     angular.module('ngBrxApp')
-        .directive('shPagination', ['$location', function ($location) {
+        .directive('shPagination', ['$location', 'constantService', function ($location, constantService) {
             return {
                 templateUrl: '/views/directives/sh-pagination.html',
                 restrict: 'A',
@@ -46,7 +46,7 @@
                     var search = $location.search(),
                         //url = $location.absUrl().replace(/\&p=[0-9]+/, ''),
                         path = $location.path(),
-                        size = scope.size() || 20,
+                        size = scope.size() || constantService.pageSize,
                         total = scope.total() || 0;
 
                     scope.vo = _generatePageData(path, search, total, size);
