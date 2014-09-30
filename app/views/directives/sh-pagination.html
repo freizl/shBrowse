@@ -2,6 +2,10 @@
 
   <li class="arrow"><a ng-href="{{vo.pp.url}}">&laquo;</a></li>
 
+  <li><a ng-href="{{vo.fp.url}}" ng-cloak>{{vo.fp.num}}</a></li>
+
+  <li class="unavailable">&hellip;</li>
+
   <li ng-repeat="p in vo.pages" ng-class="vo.isCurrentPage(p)">
     <a ng-href="{{p.url}}" >{{p.num}}</a>
   </li>

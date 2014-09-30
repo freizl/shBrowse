@@ -1,4 +1,4 @@
-;(function(angular, _){
+;(function(angular, _) {
     'use strict';
 
     function _generateUrl (path, search) {
@@ -14,6 +14,7 @@
             pageIndexs = _.range((cp-3) >= 1 ? (cp-3) : 1, (cp+5) > tp ? tp+1 : cp+5);
 
         var vo = {
+            fp: {num: 1 , url: _generateUrl(path, _.extend({}, search, {p:1}))},
             np: {num: np , url: _generateUrl(path, _.extend({}, search, {p:np}))},
             pp: {num: pp , url: _generateUrl(path, _.extend({}, search, {p:pp}))},
             tp: {num: tp , url: _generateUrl(path, _.extend({}, search, {p:tp}))},
