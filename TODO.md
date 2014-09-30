@@ -8,6 +8,8 @@
 3. [ ] Pagination components
   - pagination via abs link or click handler
 
-4. [ ] angular i18n
+4. [] angular i18n
+  - Static way: add locale angular file into index.html to enable.
+  - Dynamic way: ??
 
 5. [ ] ng-translation

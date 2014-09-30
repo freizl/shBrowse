@@ -15,7 +15,8 @@
     "angular-mocks": "~1.2.0",
     "angular-scenario": "~1.2.0",
     "foundation": "~5.4.5",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "angular-i18n": "~1.2.25"
   },
   "appPath": "app"
 }
