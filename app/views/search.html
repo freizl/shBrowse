@@ -1,6 +1,13 @@
 <h2>This is the search view.</h2>
 
-<div> {{events11}} </div>
+<p>
+  <ng-pluralize count="numFound"
+                when="{'0': 'No tickets found.',
+                       'one': '1 ticket found.',
+                       'other': '{} tickets found.'}">
+  </ng-pluralize>
+</p>
+
 <div ng-show="hasTickets">
   <ul class="search-event-list">
     <li ng-repeat="event in events">
@@ -27,10 +34,6 @@
     <li class="arrow">&raquo;</li>
   </ul>
 </div>
-
-<p ng-hide="hasTickets" class="">
-  No tickets found.
-</p>
 
 <button>
   Loading more...

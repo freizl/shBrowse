@@ -17,6 +17,7 @@ angular.module('ngBrxApp')
           .success(function (data) {
               if (!!data && data.numFound > 0) {
                   $scope.events = data.events;
+                  $scope.numFound = data.numFound;
 
                   var absUrl = $location.absUrl().replace(/\&p=[0-9]+/, ''),
                       totalPages = Math.ceil(data.numFound / 20),
