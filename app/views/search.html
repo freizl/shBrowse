@@ -1,22 +1,22 @@
 <h2>This is the search view.</h2>
 
 <p>
-  <ng-pluralize count="numFound"
+  <ng-pluralize count="data.numFound"
                 when="{'0': 'No tickets found.',
-                       'one': '1 ticket found.',
-                       'other': '{} tickets found.'}">
+                'one': '1 ticket found.',
+                'other': '{} tickets found.'}">
   </ng-pluralize>
 </p>
 
-<div ng-show="hasTickets">
+<div ng-if="data.numFound">
+
   <ul class="search-event-list">
-    <li ng-repeat="event in events">
+    <li ng-repeat="event in data.events">
       <a ng-href="http://www.stubhub.com/{{event.eventUrl}}">
         <p>
           <!--
           -->
           <img ng-src="{{event.imageUrl}}" width="50" height="25" />
-
 
           {{event.name}}, {{event.ticketInfo.minPrice | currency}}, {{event.ticketInfo.totalTickets}} tickets, {{event.eventDateLocal | date: 'EEE, MMM dd, yyyy'}}
         </p>
@@ -24,17 +24,6 @@
     </li>
   </ul>
 
-  <ul class="pagination">
-    <li class="arrow unavailable">&laquo;</li>
-    <li ng-repeat="p in page.pages" ng-class="currentPage(p)">
-      <a ng-href="{{p.url}}" >{{p.num}}</a>
-    </li>
-    <li class="unavailable">&hellip;</li>
-    <li><a ng-href="{{page.totalPage.url}}">{{page.totalPage.num}}</a></li>
-    <li class="arrow">&raquo;</li>
-  </ul>
-</div>
+  <div sh-pagination total-count="data.numFound" page-size="pageSize"></div>
 
-<button>
-  Loading more...
-</button>
+</div>

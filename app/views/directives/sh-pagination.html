@@ -1,0 +1,15 @@
+<ul class="pagination">
+
+  <li class="arrow"><a ng-href="{{vo.pp.url}}">&laquo;</a></li>
+
+  <li ng-repeat="p in vo.pages" ng-class="vo.isCurrentPage(p)">
+    <a ng-href="{{p.url}}" >{{p.num}}</a>
+  </li>
+
+  <li class="unavailable">&hellip;</li>
+
+  <li><a ng-href="{{vo.tp.url}}" ng-cloak>{{vo.tp.num}}</a></li>
+
+  <li class="arrow"><a ng-href="{{vo.np.url}}">&raquo;</a></li>
+
+</ul>
