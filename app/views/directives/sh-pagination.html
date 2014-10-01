@@ -2,17 +2,17 @@
 
   <li class="arrow"><a ng-href="{{vo.pp.url}}">&laquo;</a></li>
 
-  <li><a ng-href="{{vo.fp.url}}" ng-cloak>{{vo.fp.num}}</a></li>
+  <li ng-show="vo.showFirstMore"><a ng-href="{{vo.fp.url}}" ng-cloak>{{vo.fp.num}}</a></li>
 
-  <li class="unavailable">&hellip;</li>
+  <li ng-show="vo.showFirstMore" class="unavailable">&hellip;</li>
 
   <li ng-repeat="p in vo.pages" ng-class="vo.isCurrentPage(p)">
     <a ng-href="{{p.url}}" >{{p.num}}</a>
   </li>
 
-  <li class="unavailable">&hellip;</li>
+  <li ng-show="vo.showLastMore" class="unavailable">&hellip;</li>
 
-  <li><a ng-href="{{vo.tp.url}}" ng-cloak>{{vo.tp.num}}</a></li>
+  <li ng-show="vo.showLastMore"><a ng-href="{{vo.tp.url}}" ng-cloak>{{vo.tp.num}}</a></li>
 
   <li class="arrow"><a ng-href="{{vo.np.url}}">&raquo;</a></li>
 

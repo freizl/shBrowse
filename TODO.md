@@ -8,8 +8,14 @@
 3. [X] Pagination components
   - pagination via abs link or click handler
 
+3.1 [ ] Pagination enhancement - the more link
+
+
 4. [] angular i18n
   - Static way: add locale angular file into index.html to enable.
-  - Dynamic way: leverage server side (temp solution at client side)
+  - Dynamic way: temp solution at client side via local storage.
+  - Dynamic way: leverage server side
 
 5. [ ] ng-translation
+
+6. [ ] tests
