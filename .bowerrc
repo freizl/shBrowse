@@ -1,4 +1,4 @@
 {
-    "directory": "app/bower_components",
-    "proxy" : "slc-entbc-001"
+    "proxy" : "slc-entbc-001.corp.ebay.com",
+    "directory": "app/bower_components"
 }

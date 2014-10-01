@@ -1,19 +1,5 @@
-;(function(angular, _, $) {
+;(function(angular, _, $, SH) {
     'use strict';
-
-    var APP_TOKEN = 'Bearer wzHoy6uSWWV9qHnK9KF42NP09LQa';
-
-    // FIXME: To do in server side
-    function _loadAngularI18N () {
-            // <!-- <script src="/bower_components/angular-i18n/angular-locale_zh-cn.js"></script> -->
-        var search = document.location.search,
-            xs = _.filter(search.split('&'), function (v) { return v.indexOf('locale') === 0; });
-        if (xs.length >= 1) {
-            $.getScript("/bower_components/angular-i18n/angular-locale_" + xs[0].substr(7) + ".js");
-        }
-    }
-
-    _loadAngularI18N();
 
     /**
      * @ngdoc overview
@@ -29,10 +15,13 @@
             'ngCookies',
             'ngRoute',
             'ngSanitize',
-            'ngTouch'
+            'ngTouch',
+            'LocalStorageModule'
         ])
-        .value('appToken', APP_TOKEN) // FIXME: may a app provider??
-        .config(function ($routeProvider, $locationProvider, $httpProvider) {
+        // .run(['localStorageService', 'constantService', function (localStorageService, CS) {
+        //     _loadAngularI18N(localStorageService.get(CS.keyCurrentLocale));
+        // }])
+        .config(function ($routeProvider, $locationProvider, $httpProvider, localStorageServiceProvider) {
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/home.html',
@@ -50,10 +39,13 @@
                     redirectTo: '/'
                 });
 
-            $httpProvider.defaults.headers.common.Authorization = APP_TOKEN;
-
+            $httpProvider.defaults.headers.common.Authorization = SH.APP_TOKEN;
             $locationProvider.html5Mode(true);
+            localStorageServiceProvider.setPrefix('stubhub');
 
-        });
 
-})(angular, _, jQuery);
+        })
+        .value('appToken', SH.APP_TOKEN)
+    ;
+
+})(angular, _, jQuery, StubHub);

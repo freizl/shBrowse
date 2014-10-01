@@ -9,15 +9,16 @@
      * Controller of the ngBrxApp
      */
     angular.module('ngBrxApp')
-        .controller('NavCtrl', ['$scope', '$location', function ($scope, $location) {
+        .controller('NavCtrl', ['$scope', '$window', 'localStorageService', 'constantService', function ($scope, $window, localStorageService, CS) {
             var langs = [ { name: "US", value: 'en-us'},
                           { name: "ZH", value: 'zh-cn'}
-                        ],
-                p = $location.path();
-            // FIXME: use click handler to append search parameter and reload page.
-            $scope.langs = _.map(langs, function (v) {
-                return _.extend({}, v, {url: $location.search('locale', v.value).path(p).url()});
-            });
+                        ];
+
+            $scope.langs = langs;
+            $scope.switchLang = function (v) {
+                localStorageService.set(CS.keyCurrentLocale, v);
+                $window.location.reload(); // check stubhub.js about dynamic load i18n file.
+            };
         }]);
 
 })(jQuery, angular, _);

@@ -12,7 +12,8 @@ angular.module('ngBrxApp')
 
     // Public API here
     return {
-      pageSize: 20
+        pageSize: 20,
+        keyCurrentLocale: 'currentLocale'
     };
 
   });
