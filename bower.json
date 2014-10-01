@@ -18,7 +18,9 @@
     "foundation": "~5.4.5",
     "lodash": "~2.4.1",
     "angular-i18n": "~1.2.25",
-    "jquery": "1.10.2"
+    "jquery": "1.10.2",
+    "angular-translate": "~2.4.0",
+    "angular-translate-loader-static-files": "~2.4.0"
   },
   "appPath": "app"
 }

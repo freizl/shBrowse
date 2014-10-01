@@ -9,9 +9,10 @@
      * Controller of the ngBrxApp
      */
     angular.module('ngBrxApp')
-        .controller('NavCtrl', ['$scope', '$window', 'localStorageService', 'constantService', function ($scope, $window, localStorageService, CS) {
+        .controller('NavCtrl', ['$scope', '$window', 'localStorageService', 'constantService', '$translate', function ($scope, $window, localStorageService, CS, $translate) {
             var langs = [ { name: "US", value: 'en-us'},
-                          { name: "ZH", value: 'zh-cn'}
+                          { name: "ZH", value: 'zh-cn'},
+                          { name: "DE", value: 'de-de'}
                         ];
 
             $scope.langs = langs;

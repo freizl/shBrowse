@@ -34,7 +34,7 @@
         <section class="top-bar-section">
           <ul class="right">
             <li class="has-dropdown not-click">
-              <a href="/about">Language</a>
+              <a href="/about">{{ 'nav_language' | translate }}</a>
               <ul class="dropdown">
                 <li ng-repeat="l in langs">
                   <a ng-click="switchLang(l.value)">{{l.name}}</a>
@@ -77,6 +77,8 @@
     <script src="/bower_components/angular-touch/angular-touch.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="/bower_components/angular-local-storage/angular-local-storage.js"></script>
+    <script src="/bower_components/angular-translate/angular-translate.js"></script>
+    <script src="/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
     <!-- endbuild -->
 
     <!--

@@ -16,12 +16,10 @@
             'ngRoute',
             'ngSanitize',
             'ngTouch',
-            'LocalStorageModule'
+            'LocalStorageModule',
+            'pascalprecht.translate'
         ])
-        // .run(['localStorageService', 'constantService', function (localStorageService, CS) {
-        //     _loadAngularI18N(localStorageService.get(CS.keyCurrentLocale));
-        // }])
-        .config(function ($routeProvider, $locationProvider, $httpProvider, localStorageServiceProvider) {
+        .config(function ($routeProvider, $locationProvider, $httpProvider, localStorageServiceProvider, $translateProvider) {
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/home.html',
@@ -43,9 +41,17 @@
             $locationProvider.html5Mode(true);
             localStorageServiceProvider.setPrefix('stubhub');
 
+            $translateProvider.useStaticFilesLoader({
+                prefix: '/languages/',
+                suffix: '.json'
+            });
 
         })
         .value('appToken', SH.APP_TOKEN)
+        .run(['$translate', 'localStorageService', 'constantService', function ($translate, localStorageService, CS) {
+            var locale = localStorageService.get(CS.keyCurrentLocale);
+            $translate.use( locale || 'en-us');
+        }])
     ;
 
 })(angular, _, jQuery, StubHub);
