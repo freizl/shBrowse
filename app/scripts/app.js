@@ -44,12 +44,16 @@
                 });
 
             $httpProvider.defaults.headers.common.Authorization = C_APP_TOKEN;
+
             $locationProvider.html5Mode(true);
+
             localStorageServiceProvider.setPrefix('stubhub');
+
             $translateProvider.useStaticFilesLoader({
                 prefix: '/languages/',
                 suffix: '.json'
             });
+            $translateProvider.addInterpolation('$translateMessageFormatInterpolation');
 
         })
         .run(['$translate', 'localStorageService', 'C_LOCALE_KEY', function ($translate, localStorageService, LOCALE_KEY) {
