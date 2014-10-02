@@ -19,4 +19,6 @@
 5. [X] ng-translation
   - [X] pluralization via messageformat
 
-6. [] tests
+6. [-] tests
+  - [X] unit test
+  - [] e2e test
