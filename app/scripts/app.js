@@ -1,6 +1,12 @@
 ;(function(angular, _, $, SH) {
     'use strict';
 
+    // COPY FROM ng-translate but do not use '_' in locale value.
+    var getLocale = function () {
+        var nav = window.navigator;
+        return ((angular.isArray(nav.languages) ? nav.languages[0] : nav.language || nav.browserLanguage || nav.systemLanguage || nav.userLanguage) || '').toLowerCase();
+    };
+
     /**
      * @ngdoc overview
      * @name ngBrxApp
@@ -19,7 +25,7 @@
             'LocalStorageModule',
             'pascalprecht.translate'
         ])
-        .config(function ($routeProvider, $locationProvider, $httpProvider, localStorageServiceProvider, $translateProvider) {
+        .config(function ($routeProvider, $locationProvider, $httpProvider, localStorageServiceProvider, $translateProvider, C_APP_TOKEN) {
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/home.html',
@@ -37,20 +43,18 @@
                     redirectTo: '/'
                 });
 
-            $httpProvider.defaults.headers.common.Authorization = SH.APP_TOKEN;
+            $httpProvider.defaults.headers.common.Authorization = C_APP_TOKEN;
             $locationProvider.html5Mode(true);
             localStorageServiceProvider.setPrefix('stubhub');
-
             $translateProvider.useStaticFilesLoader({
                 prefix: '/languages/',
                 suffix: '.json'
             });
 
         })
-        .value('appToken', SH.APP_TOKEN)
-        .run(['$translate', 'localStorageService', 'constantService', function ($translate, localStorageService, CS) {
-            var locale = localStorageService.get(CS.keyCurrentLocale);
-            $translate.use( locale || 'en-us');
+        .run(['$translate', 'localStorageService', 'C_LOCALE_KEY', function ($translate, localStorageService, LOCALE_KEY) {
+            var locale = localStorageService.get(LOCALE_KEY) || getLocale() || 'en-us';
+            $translate.use(locale);
         }])
     ;
 

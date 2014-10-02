@@ -9,11 +9,11 @@
      * Factory in the ngBrxApp.
      */
     angular.module('ngBrxApp')
-        .factory('searchApi', ['$http', 'constantService', function ($http, constantService) {
+        .factory('searchApi', ['$http', 'C_PAGE_SIZE', function ($http, PAGE_SIZE) {
 
             var BASE_URL = '/shape/search/catalog/',
                 EVENTS_URL = BASE_URL + 'events/v3',
-                SIZE = constantService.pageSize;
+                SIZE = PAGE_SIZE;
 
             var DEFAULT_OPTS = { minAvailableTickets: 1,
                                  limit: SIZE,

@@ -1,19 +1,16 @@
-'use strict';
+;(function(angular, SH) {
+    'use strict';
 
-/**
- * @ngdoc service
- * @name ngBrxApp.constantService
- * @description
- * # constantService
- * Factory in the ngBrxApp.
- */
-angular.module('ngBrxApp')
-  .factory('constantService', function () {
-
-    // Public API here
-    return {
-        pageSize: 20,
-        keyCurrentLocale: 'currentLocale'
-    };
-
-  });
+    /**
+     * Constant values
+     * @ngdoc constant
+     * @name ngBrxApp.constantService
+     * @description
+     *
+     */
+    angular.module('ngBrxApp')
+        .constant('C_APP_TOKEN', SH.APP_TOKEN)
+        .constant('C_PAGE_SIZE', 20)
+        .constant('C_LOCALE_KEY', 'currentLocale')
+    ;
+})(angular, StubHub || {});
