@@ -15,7 +15,7 @@ angular.module('ngBrxApp')
 
       searchApi.events(so)
           .success(function (data) {
-              if (!!data && data.numFound > 0) {
+              if (!!data) {
                   $scope.data = data;
               }
           });

@@ -1,7 +1,7 @@
 {
     "nav_language": "Language",
 
-    "ticket_found": "{NUM} {NUM, select, 0{ticket} 1{ticket} other{tickets}} found",
+    "ticket_found": "{NUM, plural, zero{# ticket} one{1 ticket} other{# tickets}} found",
 
     "search_placeholder": "Search your favorite tickets",
     "search_view_title": "This is search view page",

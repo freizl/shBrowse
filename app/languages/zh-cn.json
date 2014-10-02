@@ -1,7 +1,7 @@
 {
     "nav_language": "语言",
 
-    "ticket_found": "找到 {NUM} {NUM, select, other{票}}",
+    "ticket_found": "找到 {NUM, plural, other{# 票}}",
 
     "search_placeholder": "搜索你喜欢的票",
     "search_view_title": "搜索结果页面",
