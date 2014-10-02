@@ -18,16 +18,27 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-cookies/angular-cookies.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-sanitize/angular-sanitize.js',
-      'bower_components/angular-touch/angular-touch.js',
-      'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+        'app/bower_components/jquery/jquery.js',
+        'app/bower_components/lodash/dist/lodash.js',
+        'app/bower_components/messageformat/messageformat.js',
+
+        'app/bower_components/angular/angular.js',
+        'app/bower_components/angular-mocks/angular-mocks.js',
+        'app/bower_components/angular-animate/angular-animate.js',
+        'app/bower_components/angular-cookies/angular-cookies.js',
+        'app/bower_components/angular-route/angular-route.js',
+        'app/bower_components/angular-sanitize/angular-sanitize.js',
+        'app/bower_components/angular-touch/angular-touch.js',
+
+        'app/Bower_components/angular-local-storage/angular-local-storage.js',
+        'app/bower_components/angular-translate/angular-translate.js',
+        'app/bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js',
+        'app/bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js',
+
+        'app/scripts/*.js',
+        'app/scripts/**/*.js',
+        'test/mock/**/*.js',
+        'test/spec/**/*.js'
     ],
 
     // list of files / patterns to exclude
@@ -45,13 +56,17 @@ module.exports = function(config) {
     // - PhantomJS
     // - IE (only Windows)
     browsers: [
-      'PhantomJS'
+        'PhantomJS'
+        // 'Firefox'
+        //'Chrome'
     ],
 
     // Which plugins to enable
     plugins: [
-      'karma-phantomjs-launcher',
-      'karma-jasmine'
+        'karma-phantomjs-launcher',
+        'karma-chrome-launcher',
+        'karma-firefox-launcher',
+        'karma-jasmine'
     ],
 
     // Continuous Integration mode

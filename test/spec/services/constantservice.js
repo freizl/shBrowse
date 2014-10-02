@@ -6,13 +6,14 @@ describe('Service: constantService', function () {
   beforeEach(module('ngBrxApp'));
 
   // instantiate service
-  var constantService;
-  beforeEach(inject(function (_constantService_) {
-    constantService = _constantService_;
+  var APP_TOKEN;
+
+  beforeEach(inject(function (_C_APP_TOKEN_) {
+    APP_TOKEN = _C_APP_TOKEN_;
   }));
 
-  it('should do something', function () {
-    expect(!!constantService).toBe(true);
+  it('APP_TOKEN shall be defined', function () {
+      expect(APP_TOKEN).toBeDefined();
   });
 
 });

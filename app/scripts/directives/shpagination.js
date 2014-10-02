@@ -14,7 +14,7 @@
         var tp = Math.ceil(total / size),
             cp = !!search.p ? parseInt(search.p) : 1,
             np = (cp + 1) > tp ? tp : (cp + 1),
-            pp = (cp - 1) == 0 ? cp : (cp - 1),
+            pp = (cp - 1) === 0 ? cp : (cp - 1),
             pageIndexs = _.range((cp-3) >= 1 ? (cp-3) : 1, (cp+5) > tp ? tp+1 : cp+5);
         var poGen = _.bind(_generatePageObj, {}, path, search);
 
@@ -49,7 +49,7 @@
                     size: '&pageSize'
                 },
 
-                link: function (scope, linkElement, linkAttrs) {
+                link: function (scope /*, linkElement, linkAttrs*/) {
                     var search = $location.search(),
                         path = $location.path(),
                         size = scope.size() || PAGE_SIZE,

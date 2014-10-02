@@ -1,4 +1,4 @@
-;(function(angular, _, $) {
+;(function(angular) {
     'use strict';
 
     // COPY FROM ng-translate but do not use '_' in locale value.
@@ -63,4 +63,4 @@
         }])
     ;
 
-})(angular, _, jQuery);
+})(angular);

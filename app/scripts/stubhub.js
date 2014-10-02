@@ -1,8 +1,9 @@
 /**
  * StubHub hack
  */
-
 ;(function($, W) {
+    'use strict';
+
 
     W.StubHub = {
         'APP_TOKEN' : 'Bearer wzHoy6uSWWV9qHnK9KF42NP09LQa'
@@ -10,7 +11,7 @@
 
     function _loadAngularI18N (locale) {
         if (!!locale && locale.toLowerCase() !== 'en-us') {
-            $.getScript("/bower_components/angular-i18n/angular-locale_" + locale + ".js");
+            $.getScript('/bower_components/angular-i18n/angular-locale_' + locale + '.js');
         }
     }
 

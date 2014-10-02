@@ -1,4 +1,4 @@
-;(function($, angular, _) {
+;(function(angular) {
     'use strict';
 
     /**
@@ -10,9 +10,9 @@
      */
     angular.module('ngBrxApp')
         .controller('NavCtrl', ['$scope', '$window', 'localStorageService', '$translate', 'C_LOCALE_KEY', function ($scope, $window, localStorageService, $translate, LOCALE_KEY) {
-            var langs = [ { name: "US", value: 'en-us'},
-                          { name: "ZH", value: 'zh-cn'},
-                          { name: "DE", value: 'de-de'}
+            var langs = [ { name: 'US', value: 'en-us'},
+                          { name: 'ZH', value: 'zh-cn'},
+                          { name: 'DE', value: 'de-de'}
                         ];
 
             $scope.langs = langs;
@@ -22,4 +22,4 @@
             };
         }]);
 
-})(jQuery, angular, _);
+})(angular);
