@@ -53,7 +53,8 @@
                 prefix: '/languages/',
                 suffix: '.json'
             });
-            $translateProvider.addInterpolation('$translateMessageFormatInterpolation');
+            $translateProvider.useMessageFormatInterpolation();
+            // $translateProvider.addInterpolation('$translateMessageFormatInterpolation');
 
         })
         .run(['$translate', 'localStorageService', 'C_LOCALE_KEY', function ($translate, localStorageService, LOCALE_KEY) {

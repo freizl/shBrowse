@@ -1,7 +1,7 @@
 <h2>{{ 'search_view_title' | translate }}</h2>
 
 <p ng-show="data">
-  {{ 'ticket_found' | translate:"{NUM: data.numFound}":"messageformat" }}
+  {{ 'ticket_found' | translate:"{NUM: data.numFound}" }}
 </p>
 
 <div ng-if="data.numFound">

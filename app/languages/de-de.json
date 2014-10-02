@@ -1,5 +1,10 @@
 {
     "nav_language": "Sprache",
+
+    "ticket_found": "{NUM} {NUM, select, 0{ticket} 1{ticket} other{tickets}} gefunden",
+
     "search_placeholder": "Suchen Sie Ihre Lieblingstickets",
-    "search_view_title": "Dies ist Suchseite"
+    "search_view_title": "Dies ist Suchseite",
+
+    "test": "hallo, {VAL}"
 }

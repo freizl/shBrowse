@@ -16,7 +16,7 @@
   - Dynamic way: temp solution at client side via local storage.
   - Dynamic way: leverage server side
 
-5. [-] ng-translation
-  - [] pluralization
+5. [X] ng-translation
+  - [X] pluralization via messageformat
 
 6. [] tests
