@@ -8,3 +8,8 @@ Re-implement browse feature in AngularJS
   - [angular translation](https://github.com/angular-translate/angular-translate)
   - [messageformat.js](https://github.com/SlexAxton/messageformat.js)
   - [ng-translate v.s. ng-gettext](https://github.com/rubenv/angular-gettext/issues/3)
+
+
+# License
+
+Check the file `LICENSE`
