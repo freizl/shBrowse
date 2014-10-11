@@ -6,15 +6,34 @@
 
 <div ng-if="data">
 
-  <ul class="search-event-list">
-    <li ng-repeat="event in data.events">
-      <a ng-href="http://www.stubhub.com/{{event.eventUrl}}">
-        <p>
-          <img ng-src="{{event.imageUrl}}" width="50" height="25" />
+  <ul class="search-event-list small-block-grid-1">
+    <li ng-repeat="event in data.events" style="border: 1px solid #C0C0C0; margin: 0 0 15px 0; padding: 5px; border-radius: 6px;">
+      <div class="event-item">
+        <!-- <img ng-src="{{event.imageUrl}}" style="float:left; margin-right: 20px; height: 120px;"/> -->
 
-          {{event.name}}, {{event.ticketInfo.minPrice | currency}}, {{event.ticketInfo.totalTickets}} tickets, {{event.eventDateLocal | date: 'EEE, MMM dd, yyyy'}}
+        <a ng-href="http://www.stubhub.com/{{event.eventUrl}}">
+          <span class="label">StubHub events</span>
+          <span class="label">
+            <span>{{event.eventDateLocal | date: 'EEEE'}}</span>
+            <span>{{event.eventDateLocal | date: 'MMM'}}</span>
+            <span>{{event.eventDateLocal | date: 'dd'}}</span>
+            <span>{{event.eventDateLocal | date: 'yyyy'}}</span>
+            <span>Starts:  {{event.eventDateLocal | date: 'mm:ss a'}}</span>
+          </span>
+        </a>
+
+        <span class="event-tickets-info label">
+          {{event.ticketInfo.totalTickets}} tickets, from {{event.ticketInfo.minPrice | currency}}
+        </span>
+
+        <p style="margin-top: 20px;">
+          <a ng-href="/event/{{event.eventUrl}}" class="event-name">
+            {{event.name}}
+          </a>
         </p>
-      </a>
+
+      </div>
+
     </li>
   </ul>
 
