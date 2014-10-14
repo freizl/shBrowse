@@ -15,6 +15,17 @@ angular.module('ngBrxApp')
           .success(function (data) {
               if (!!data) {
                   $scope.data = data;
+                  $scope.eventUrl = function (event) {
+                      var xs = [''],
+                  	      eventId = '' + event.id,
+                  	      eventUrl = event.eventUrl.replace('-' + eventId, '');
+
+                  	  if (event.performers && event.performers.length >= 1) {
+                  	  	xs.push(event.performers[0].url);
+                  	  }
+
+                      return xs.concat([eventUrl, 'event', eventId, '']).join('/');
+                  };
               }
           });
   });

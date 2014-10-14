@@ -18,6 +18,8 @@
             var DEFAULT_OPTS = { minAvailableTickets: 1,
                                  limit: SIZE,
                                  //locale: 'en_US',
+                                 fieldList: 'id,ticketInfo,name,eventDateLocal,venue,performers,eventUrl',
+                                 //performerId:197
                                  sort: 'eventDateLocal asc',
                                  status: 'active'
                                };
