@@ -1,18 +1,24 @@
 <p>This is the Event view. {{eventId}}</p>
 
-<section class="event-detais" style="border: 1px solid #C0C0C0;">
+<section class="row event-detais" style="border: 1px solid #C0C0C0;">
   <p>{{ event.description }}</p>
   <p>{{ event.eventDateLocal | date: 'hh:mm a' }} at {{event.venue.name}}</p>
   <p>{{event.venue.city}} {{event.venue.state}}</p>
 </section>
 
+<div class="row" style="border: 1px solid #C0C0C0; margin-top: 20px;">
+  <section class="event-tickets small-3 columns">
+    <ul class="small-block-grid-1">
+      <li ng-repeat="t in tickets.listing">
+        <a ng-href="{{ticketUrl(t)}}" target="_blank" ref="nofollow">
+          <span class="label">{{t.sectionName}}, Row {{t.row}}</span>
+          <p>{{t.quantity}} tickets, {{t.currentPrice.amount | currency}}</p>
+        </a>
+      </li>
+    </ul>
+  </section>
 
-<section class="event-tickets" style="border: 1px solid #C0C0C0; margin-top: 20px;">
-  <ul class="small-block-grid-1">
-    <li ng-repeat="t in tickets.listing">
-      <a ng-href="{{ticketUrl(t)}}">
-        {{t.sectionName}}, Row {{t.row}}, {{t.quantity}} tickets, {{t.currentPrice.amount | currency}}
-      </a>
-    </li>
-  </ul>
-</section>
+  <section class="seatmap small-8 small-offset-1 colums">
+aa
+  </section>
+</div>
