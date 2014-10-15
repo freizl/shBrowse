@@ -1,5 +1,8 @@
 {
     "nav_language": "Language",
+    "nav_sports": "Sports",
+    "nav_concerts": "Concerts",
+    "nav_theater": "Theater",
 
     "ticket_found": "{NUM, plural, zero{# ticket} one{1 ticket} other{# tickets}} found",
 

@@ -1,5 +1,8 @@
 {
     "nav_language": "语言",
+    "nav_sports": "Sports",
+    "nav_concerts": "Concerts",
+    "nav_theater": "Theater",
 
     "ticket_found": "找到 {NUM, plural, other{# 票}}",
 

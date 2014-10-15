@@ -39,19 +39,20 @@
                     templateUrl: '/views/search.html',
                     controller: 'SearchCtrl'
                 })
-                .when('/:gerneName/:eventName/event/:eventId', {
+                .when('/event/:eventName/:eventId', {
                     templateUrl: '/views/event.html',
                     controller: 'EventCtrl'
                 })
-                .when('/:eventName/event/:eventId', {
-                    templateUrl: '/views/event.html',
-                    controller: 'EventCtrl'
+                .when('/performer/:performerName/:performerId', {
+                    templateUrl: '/views/search.html',
+                    controller: 'PerformerCtrl'
                 })
                 .otherwise({
                     redirectTo: '/'
                 });
 
             $httpProvider.defaults.headers.common.Authorization = C_APP_TOKEN;
+            //$httpProvider.defaults.cache = true;
 
             $locationProvider.html5Mode(true);
 

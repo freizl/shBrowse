@@ -22,3 +22,10 @@
 6. [-] tests
   - [X] unit test
   - [] e2e test
+
+7. Event detail page
+  - [] listing table with `load more` button
+  - [] seat map
+
+8. Top gerne page
+  - [] Sports/Concerts/Theater
