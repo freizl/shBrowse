@@ -28,16 +28,24 @@
         .config(function ($routeProvider, $locationProvider, $httpProvider, localStorageServiceProvider, $translateProvider, C_APP_TOKEN) {
             $routeProvider
                 .when('/', {
-                    templateUrl: 'views/home.html',
+                    templateUrl: '/views/home.html',
                     controller: 'MainCtrl'
                 })
                 .when('/about', {
-                    templateUrl: 'views/about.html',
+                    templateUrl: '/views/about.html',
                     controller: 'AboutCtrl'
                 })
                 .when('/search', {
-                    templateUrl: 'views/search.html',
+                    templateUrl: '/views/search.html',
                     controller: 'SearchCtrl'
+                })
+                .when('/:gerneName/:eventName/event/:eventId', {
+                    templateUrl: '/views/event.html',
+                    controller: 'EventCtrl'
+                })
+                .when('/:eventName/event/:eventId', {
+                    templateUrl: '/views/event.html',
+                    controller: 'EventCtrl'
                 })
                 .otherwise({
                     redirectTo: '/'
