@@ -2,17 +2,19 @@
     'use strict';
 
     // a maybe SEO friendly URL
-    function generateEventUrl2 (event) {
-        var xs = [''],
-            eventId = '' + event.id,
-            eventUrl = event.eventUrl.replace('-' + eventId, '');
+    /*
+     function generateEventUrl2 (event) {
+     var xs = [''],
+     eventId = '' + event.id,
+     eventUrl = event.eventUrl.replace('-' + eventId, '');
 
-        if (event.performers && event.performers.length >= 1) {
-            xs.push(event.performers[0].url);
-        }
+     if (event.performers && event.performers.length >= 1) {
+     xs.push(event.performers[0].url);
+     }
 
-        return xs.concat([eventUrl, 'event', eventId]).join('/');
-    }
+     return xs.concat([eventUrl, 'event', eventId]).join('/');
+     }
+     */
 
     function generateEventUrl (event) {
         var eventId = '' + event.id,

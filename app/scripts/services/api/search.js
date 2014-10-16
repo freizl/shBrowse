@@ -1,6 +1,13 @@
 ;(function(angular, _) {
     'use strict';
 
+    function getTodayDateString () {
+        var d = new Date(),
+            m = '' + (d.getUTCMonth() + 1);
+        m = m.length === 1 ? '0'+m : m;
+        return [d.getUTCFullYear(), m, d.getUTCDate()].join('-') + 'T00:00';
+    }
+
     /**
      * @ngdoc service
      * @name ngBrxApp.search
@@ -19,8 +26,8 @@
                                  limit: SIZE,
                                  //locale: 'en_US',
                                  fieldList: 'id,ticketInfo,name,eventDateLocal,venue,performers,eventUrl',
-                                 //performerId:197
                                  sort: 'eventDateLocal asc',
+                                 date: getTodayDateString() + ' TO 3014-10-15T00:00',
                                  status: 'active'
                                };
 

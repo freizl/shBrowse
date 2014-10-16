@@ -16,7 +16,7 @@
 
             eventApi.event(eventId)
                 .success(function (data) {
-                    $scope.event = _.pick(data, function (v, key, object) {
+                    $scope.event = _.pick(data, function (v, key) {
                         return _.contains(['currencyCode', 'description', 'eventDateLocal', 'eventDateUTC', 'timezone', 'hideEventDate', 'hideEventTime', 'integratedEventInd', 'title', 'venue'], key);
                     });
 
@@ -24,7 +24,7 @@
 
             eventApi.tickets(eventId)
                 .success(function (data) {
-                    $scope.tickets = _.pick(data, function (v, key, object) {
+                    $scope.tickets = _.pick(data, function (v, key) {
                         return _.contains(['listing', 'totalListings', 'zone_stats'], key);
                     });
                     $scope.ticketUrl = function (ticket) {

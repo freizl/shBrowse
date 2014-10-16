@@ -32,7 +32,7 @@
                                   rows: SIZE,
                                   sort: 'currentprice asc',
                                   eventId: eventId,
-                                  zoneStats: true,
+                                  //zoneStats: true,
                                   pricingSummary: true,
                                   listingAttributeCategorySummary: true,
                                   deliveryTypeSummary: true
