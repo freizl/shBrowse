@@ -14,12 +14,12 @@
                           { name: 'ZH', value: 'zh-cn'},
                           { name: 'DE', value: 'de-de'}
                         ];
-            var topPerformers = [ { nameKey: 'nav_sports', url: '/performer/sports-tickets/28'},
-                                  { nameKey: 'nav_concerts', url: '/performer/concerts-tickets/1'},
-                                  { nameKey: 'nav_theater', url: '/performer/theater-tickets/174'}
+            var topCategory = [ { nameKey: 'nav_sports', url: '/category/sports-tickets/28'},
+                                  { nameKey: 'nav_concerts', url: '/category/concerts-tickets/1'},
+                                  { nameKey: 'nav_theater', url: '/category/theater-tickets/174'}
                                 ];
 
-            $scope.performers = topPerformers;
+            $scope.category = topCategory;
             $scope.langs = langs;
             $scope.switchLang = function (v) {
                 localStorageService.set(LOCALE_KEY, v);

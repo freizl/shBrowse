@@ -43,9 +43,9 @@
                     templateUrl: '/views/event.html',
                     controller: 'EventCtrl'
                 })
-                .when('/performer/:performerName/:performerId', {
+                .when('/category/:categoryName/:categoryId', {
                     templateUrl: '/views/search.html',
-                    controller: 'PerformerCtrl'
+                    controller: 'CategoryCtrl'
                 })
                 .otherwise({
                     redirectTo: '/'

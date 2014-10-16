@@ -15,9 +15,9 @@
      * Controller of the ngBrxApp
      */
     angular.module('ngBrxApp')
-        .controller('PerformerCtrl', function ($scope, $routeParams, $location, searchApi) {
+        .controller('CategoryCtrl', function ($scope, $routeParams, $location, searchApi) {
             var so = $location.search(),
-                params = _.extend({performerId: $routeParams.performerId}, so || {});
+                params = _.extend({categoryId: $routeParams.categoryId}, so || {});
 
             searchApi.events(params)
                 .success(function (data) {
